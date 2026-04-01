@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdDelete } from 'react-icons/md';
+import { MdDelete, MdOutlineLocalGroceryStore } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
 const Cart = ({ carts, setCarts }) => {
@@ -20,7 +20,10 @@ const Cart = ({ carts, setCarts }) => {
         <div className=" p-6 bg-slate-50 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">Your Cart</h2>
             {carts.length === 0 ? (
-                <p className="text-center text-slate-500">Your cart is empty.</p>
+                <div className="flex flex-col items-center gap-4 py-8 bg-blue-100 rounded-lg"> 
+                    <MdOutlineLocalGroceryStore className='w-20 h-20 text-gray-400'/>
+                    <h2 className='text-3xl font-bold text-gray-600'>Your Cart is Empty</h2>
+                </div>
             ) : (
                 <div className="space-y-4">
                     {carts.map((product, index) => (

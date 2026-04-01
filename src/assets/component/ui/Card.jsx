@@ -67,7 +67,7 @@ const Card = ({ product, carts, setCarts }) => {
       <button
 
         onClick={handleAddToCart}
-       className={`w-full py-3.5 rounded-full ${isBuyed ? 'bg-green-900' : 'bg-gradient-to-r from-[#4F39F6] to-[#9514FA]'} text-white font-bold transition-all active:scale-95 shadow-lg shadow-purple-100`}>
+       className={`w-full py-3.5 rounded-full ${isBuyed ? 'bg-green-500' : 'bg-gradient-to-r from-[#4F39F6] to-[#9514FA]'} text-white font-bold transition-all active:scale-95 shadow-lg shadow-purple-100`}>
         {isBuyed ? "Added to Cart" : "Buy Now"}
       </button>
     </div>
