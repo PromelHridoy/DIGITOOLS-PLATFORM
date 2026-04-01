@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 
-const Card = ({ product }) => {
+const Card = ({ product, carts, setCarts }) => {
     console.log(product);
+    const [isBuyed, setIsBuyed] = useState(false);
+
+    const handleAddToCart = () => {
+        setIsBuyed(true);
+        const isFound = carts.find(cart => cart.id === product.id);
+        if (isFound) {
+            return;
+        }
+        setCarts([...carts, product]);
+    }
     
+
     return (
         <div className="relative p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group cursor-default">
       
@@ -17,7 +28,7 @@ const Card = ({ product }) => {
         </span>
       )}
 
-      {/* Icon Area */}
+      {/* Image Area */}
       <div className="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-[#4F39F6] group-hover:text-white transition-colors duration-300">
             <img src={product.image} alt={product.name} />
       </div>
@@ -50,8 +61,10 @@ const Card = ({ product }) => {
       </div>
 
       {/* Button */}
-      <button className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#4F39F6] to-[#9514FA] text-white font-bold hover:bg-[#3b2bc4] transition-all active:scale-95 shadow-lg shadow-purple-100">
-        Buy Now
+      <button
+        onClick={handleAddToCart}
+       className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#4F39F6] to-[#9514FA] text-white font-bold hover:bg-[#3b2bc4] transition-all active:scale-95 shadow-lg shadow-purple-100">
+        {isBuyed ? "Added to Cart" : "Buy Now"}
       </button>
     </div>
     );

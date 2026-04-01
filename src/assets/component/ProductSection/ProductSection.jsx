@@ -2,13 +2,12 @@ import React, { use, useState } from 'react';
 import Product from './Product/Product';
 import Cart from './Cart/Cart';
 
-const ProductSection = ({ productPromise }) => {
+const ProductSection = ({ productPromise, selectedType, setSelectedType, carts, setCarts }) => {
     // console.log(productPromise);
     const products = use(productPromise);
     console.log(products);
 
-    const [selectedType, setSelectedType] = useState("product");
-    
+
     
     return (
         <div className='container mx-auto px-4 py-8 '>
@@ -50,16 +49,16 @@ const ProductSection = ({ productPromise }) => {
           selectedType === "cart" ? "text-white" : "text-slate-600 hover:text-slate-800"
         }`}
       >
-        Cart (8)
+        Cart ({carts.length})
       </button>
     </div>
             </div>
             {
                 selectedType === "product" ? 
-                (<Product products={products}></Product>
+                (<Product products={products} carts={carts} setCarts={setCarts} ></Product>
     
                 ) : (
-                <Cart></Cart>)
+                <Cart carts={carts} setCarts={setCarts} ></Cart>)
             }
         </div>
     );

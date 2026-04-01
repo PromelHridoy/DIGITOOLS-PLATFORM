@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
 
-const Navbar = () => {
+const Navbar = ({ carts }) => {
     return (
 <div className=" bg-base-100 shadow-sm px-4 lg:px-8 sticky top-0 z-50">
     <div className="navbar container mx-auto">
@@ -40,9 +40,10 @@ const Navbar = () => {
 
       <div className="navbar-end flex items-center gap-3 lg:gap-6">
         <div className="indicator cursor-pointer group">
-        <span className="indicator-item badge badge-secondary badge-sm scale-90 bg-[#9514FA] border-none text-white font-bold">
-         3
-      </span> 
+        {carts.length > 0 && (
+          <span className="indicator-item badge badge-secondary badge-sm scale-90 bg-[#9514FA] border-none text-white font-bold">
+            {carts.length}
+      </span> )}
         <MdOutlineLocalGroceryStore 
         className="text-2xl text-purple-600 group-hover:scale-110 transition-transform" 
     />
