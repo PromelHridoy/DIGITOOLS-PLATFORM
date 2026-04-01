@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiCheck } from 'react-icons/fi';
 
 const Card = ({ product }) => {
     console.log(product);
@@ -18,7 +19,7 @@ const Card = ({ product }) => {
 
       {/* Icon Area */}
       <div className="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-[#4F39F6] group-hover:text-white transition-colors duration-300">
-            {product.icon}
+            <img src={product.image} alt={product.name} />
       </div>
 
       {/* Content */}
@@ -37,10 +38,19 @@ const Card = ({ product }) => {
         <span className="text-slate-400 text-sm font-medium">/{product.period}</span>
       </div>
 
-      
+      <div className='mb-8'>
+        {
+            product.features.map ((feature, index) => (
+                <div key={index} className="flex items-center gap-3 text-sm  group-hover:text-[#4F39F6] transition-colors duration-300">
+                    <FiCheck className="text-green-500" />
+                    <span>{feature}</span>
+                </div>
+            ))
+        }
+      </div>
 
       {/* Button */}
-      <button className="w-full py-3.5 rounded-full bg-[#4F39F6] text-white font-bold hover:bg-[#3b2bc4] transition-all active:scale-95 shadow-lg shadow-purple-100">
+      <button className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#4F39F6] to-[#9514FA] text-white font-bold hover:bg-[#3b2bc4] transition-all active:scale-95 shadow-lg shadow-purple-100">
         Buy Now
       </button>
     </div>
