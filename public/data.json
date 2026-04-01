@@ -1,29 +1,56 @@
-// [
-//   {
-//     "id": 1,
-//     "name": "Starter",
-//     "tagline": "Perfect for getting started",
-//     "price": "0",
-//     "features": ["Access to 10 free tools", "Basic templates", "Community support", "1 project per month"],
-//     "buttonText": "Get Started Free",
-//     "isPopular": false
-//   },
-//   {
-//     "id": 2,
-//     "name": "Pro",
-//     "tagline": "Best for professionals",
-//     "price": "29",
-//     "features": ["Access to all premium tools", "Unlimited templates", "Priority support", "Unlimited projects", "Cloud sync", "Advanced analytics"],
-//     "buttonText": "Start Pro Trial",
-//     "isPopular": true
-//   },
-//   {
-//     "id": 3,
-//     "name": "Enterprise",
-//     "tagline": "For teams and businesses",
-//     "price": "99",
-//     "features": ["Everything in Pro", "Team collaboration", "Custom integrations", "Dedicated support", "SLA guarantee", "Custom branding"],
-//     "buttonText": "Contact Sales",
-//     "isPopular": false
-//   }
-// ]
+[
+    {
+      "id": 1,
+      "name": "AI Writing Pro",
+      "badge": "Best Seller",
+      "description": "Generate high-quality content, blogs, and marketing copy in seconds.",
+      "price": "29",
+      "period": "Monthly",
+      "features": ["Unlimited AI generations", "50+ writing templates", "Grammar checker"]
+    },
+    {
+      "id": 2,
+      "name": "Design Templates Pack",
+      "badge": "Popular",
+      "description": "2000+ premium templates for social media, presentations, and more.",
+      "price": "49",
+      "period": "One-Time",
+      "features": ["2000+ templates", "Monthly updates", "Commercial license"]
+    },
+    {
+      "id": 3,
+      "name": "Premium Stock Assets",
+      "badge": "New",
+      "description": "Access millions of royalty-free photos, videos, and graphics.",
+      "price": "19",
+      "period": "Monthly",
+      "features": ["10M+ assets", "Commercial use", "No attribution"]
+    },
+    {
+      "id": 4,
+      "name": "Automation Toolkit",
+      "badge": "Popular",
+      "description": "Automate repetitive tasks and streamline your workflow with powerful tools.",
+      "price": "79",
+      "period": "Monthly",
+      "features": ["50+ automations", "API access", "Custom workflows"]
+    },
+    {
+      "id": 5,
+      "name": "Resume Builder Pro",
+      "badge": "New",
+      "description": "Create professional resumes and cover letters that land interviews.",
+      "price": "15",
+      "period": "One-Time",
+      "features": ["100+ templates", "ATS optimization", "Export to PDF"]
+    },
+    {
+      "id": 6,
+      "name": "Social Media Content Kit",
+      "badge": "Best Seller",
+      "description": "Complete toolkit for creating engaging social media content.",
+      "price": "39",
+      "period": "Monthly",
+      "features": ["5000+ assets", "Scheduler included", "Analytics dashboard"]
+    }
+  ]
