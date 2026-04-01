@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdDelete } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const Cart = ({ carts, setCarts }) => {
     console.log(carts);
@@ -7,11 +8,13 @@ const Cart = ({ carts, setCarts }) => {
 
     const handleAllCheckout = () => {
         setCarts([]);
+        toast.success("Checkout successful!");
     }
     
     const handleRemove = (product)  => {
         const updatedCarts = carts.filter(cart => cart.id !== product.id);
         setCarts(updatedCarts);
+        toast.info("Product removed from cart.");
     }
     return (
         <div className=" p-6 bg-slate-50 rounded-lg shadow-md">

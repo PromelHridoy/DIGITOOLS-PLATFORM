@@ -8,6 +8,7 @@ import CallToAction from './assets/component/CallToAction/CallToAction'
 import Footer from './assets/component/Footer/Footer'
 import ProductSection from './assets/component/ProductSection/ProductSection'
 import { DiVim } from 'react-icons/di'
+import { ToastContainer } from 'react-toastify'
 
 const fetchProduct = async () => {
   const res =  await fetch("/data.json");
@@ -38,6 +39,8 @@ function App() {
       <Pricing></Pricing>
       <CallToAction></CallToAction>
       <Footer></Footer>
+
+      <ToastContainer />
     </>
   )
 }

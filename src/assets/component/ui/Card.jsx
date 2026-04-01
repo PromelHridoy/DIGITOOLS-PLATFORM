@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 const Card = ({ product, carts, setCarts }) => {
     console.log(product);
@@ -9,9 +10,11 @@ const Card = ({ product, carts, setCarts }) => {
         setIsBuyed(true);
         const isFound = carts.find(cart => cart.id === product.id);
         if (isFound) {
+            toast.error("Product is already in the cart!");
             return;
         }
         setCarts([...carts, product]);
+        toast.success("Product added to cart!");
     }
     
 
