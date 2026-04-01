@@ -3,13 +3,11 @@ import { FiCheck } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 
 const Card = ({ product, carts, setCarts }) => {
-    console.log(product);
-    const [isBuyed, setIsBuyed] = useState(false);
+    const isAlreadyInCart = carts.find(cart => cart.id === product.id);
 
     const handleAddToCart = () => {
-        setIsBuyed(true);
-        const isFound = carts.find(cart => cart.id === product.id);
-        if (isFound) {
+        
+        if (isAlreadyInCart) {
             toast.error("Product is already in the cart!");
             return;
         }
@@ -65,10 +63,10 @@ const Card = ({ product, carts, setCarts }) => {
 
       {/* Button */}
       <button
-
+       disabled={isAlreadyInCart}
         onClick={handleAddToCart}
-       className={`w-full py-3.5 rounded-full ${isBuyed ? 'bg-green-500' : 'bg-gradient-to-r from-[#4F39F6] to-[#9514FA]'} text-white font-bold transition-all active:scale-95 shadow-lg shadow-purple-100`}>
-        {isBuyed ? "Added to Cart" : "Buy Now"}
+       className={`w-full py-3.5 rounded-full ${isAlreadyInCart ? 'bg-green-500' : 'bg-gradient-to-r from-[#4F39F6] to-[#9514FA]'} text-white font-bold transition-all active:scale-95 shadow-lg shadow-purple-100`}>
+        {isAlreadyInCart ? "Added to Cart" : "Buy Now"}
       </button>
     </div>
     );
