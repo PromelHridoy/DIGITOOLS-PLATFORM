@@ -3,14 +3,14 @@ import { MdDelete } from 'react-icons/md';
 
 const Cart = ({ carts, setCarts }) => {
     console.log(carts);
-    const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
+    const totalPrice = carts.reduce((sum, item) => sum + Number(item.price), 0);
 
     const handleAllCheckout = () => {
         setCarts([]);
     }
     
-    const handleRemove = (item)  => {
-        const updatedCarts = carts.filter(cart => cart.id !== item.id);
+    const handleRemove = (product)  => {
+        const updatedCarts = carts.filter(cart => cart.id !== product.id);
         setCarts(updatedCarts);
     }
     return (
@@ -35,7 +35,7 @@ const Cart = ({ carts, setCarts }) => {
                                 <p className="text-slate-500">${product.price}</p>
                             </div>
                             <button
-                            onClick={handleRemove}
+                            onClick={() => handleRemove(product)}
                             className="btn btn-sm rounded-full">
                                 <MdDelete className="text-xl text-red-500" />
                             </button>
